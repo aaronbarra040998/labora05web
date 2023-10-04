@@ -1,0 +1,424 @@
+/* Importación de la fuente 'Open Sans' desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+/* Estilos para la sección principal del chat */
+section.body-chat {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: linear-gradient(#009688 0%,#009688 130px,#d9dbd5 130px,#d9dbd5 100%);
+}
+
+/* Estilos para el contenedor principal */
+.container {
+	position: relative;
+	width: 1396px;
+	max-width: 100%;
+	height: calc(100vh - 40px);
+	background: #fff;
+	display: flex;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,.06),0 2px 5px 0 rgba(0,0,0,0.2);
+}
+
+/* Estilos para la parte izquierda del contenedor */
+.container .leftSide {
+	position: relative;
+	flex: 30%;
+	background: #fff;
+	border-right: 1px solid rgba(0,0,0,0.2);
+	overflow: hidden;
+}
+
+/* Estilos para la parte derecha del contenedor */
+.container .rightSide {
+	position: relative;
+	flex: 70%;
+	background: #e5ddd5;
+}
+
+/* Fondo con patrón en la parte derecha */
+.container .rightSide::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../img/pattern.png);
+	opacity: 0.06;
+}
+
+/* Estilos para la cabecera */
+.header {
+	position: relative;
+	width: 100%;
+	height: 60px;
+	background: #ededed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 15px;
+}
+
+/* Estilos para la imagen de usuario en la cabecera */
+.userimg {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+/* Estilos para la imagen de usuario en la cabecera */
+.cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Estilos para los iconos de navegación en la cabecera */
+.nav_icons {
+	display: flex;
+}
+
+/* Estilos para los ítems de la lista de iconos de navegación */
+.nav_icons li {
+	display: flex;
+	list-style: none;
+	cursor: pointer;
+	color: #51585c;
+	font-size: 1.5em;
+	margin-left: 22px;
+}
+
+/* Estilos para la barra de búsqueda del chat */
+.search_chat {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	background: #f6f6f6;
+	padding: 0 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Estilos para el contenedor de entrada de búsqueda */
+.search_chat div {
+	width: 100%;
+}
+
+/* Estilos para el campo de búsqueda */
+.search_chat input {
+	width: 100%;
+	outline: none;
+	background: #fff;
+	border: none;
+	padding: 6px;
+	height: 38px;
+	padding-left: 40px;
+	border-radius: 30px;
+	font-size: 14px;
+}
+
+/* Estilos para el marcador de posición del campo de búsqueda */
+.search_chat input::placeholder {
+	color: #888;
+}
+
+/* Estilos para el ícono de búsqueda */
+.search_chat ion-icon {
+	position: absolute;
+	left: 30px;
+	top: 14px;
+	font-size: 1.2em;
+}
+
+/* Estilos para la lista de chats */
+.chatlist {
+	position: relative;
+	height: calc(100% - 110px);
+	overflow-y: auto;
+}
+
+/* Estilos para cada bloque de chat en la lista */
+.chatlist .block {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 10px 0;
+	padding: 15px 15px;
+	display: flex;
+	border-bottom: 1px solid rgba(0,0,0,.06);
+	cursor: pointer;
+}
+
+/* Estilos para el bloque de chat activo */
+.chatlist .block.active {
+	background: #ebebeb;
+}
+
+/* Estilos para el bloque de chat al pasar el mouse sobre él */
+.chatlist .block:hover {
+	background: #f5f5f5;
+}
+
+/* Estilos para la imagen de perfil en el bloque de chat */
+.chatlist .block .imgbx {
+	position: relative;
+	min-width: 45px;
+	height: 45px;
+	overflow: hidden;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+/* Estilos para los detalles del bloque de chat */
+.chatlist .block .details {
+	position: relative;
+	width: 100%;
+}
+
+/* Estilos para la cabecera de la lista de chat */
+.chatlist .block .details .listHead {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 5px;
+}
+
+/* Estilos para el título del bloque de chat */
+.chatlist .block .details .listHead h4 {
+	font-size: 1.1em;
+	font-weight: 600;
+	color: #111;
+}
+
+/* Estilos para la hora en la lista de chat */
+.chatlist .block .details .listHead .time {
+	font-size: 0.75em;
+	color: #555;
+}
+
+/* Estilos para el párrafo del bloque de chat */
+.message_p {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* Estilos para el párrafo del bloque de chat */
+.chatlist .block .details p {
+	color: #555;
+	display: -webkit-box;
+  -webkit-line-clamp: 1;
+	font-size: 0.9em;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Estilos para el párrafo en el bloque de chat activo */
+.chatlist .block.active .details .listHead .time,
+.chatlist .block.active .details p {
+	color: #111;
+}
+
+/* Estilos para el párrafo no leído en la lista de chat */
+.chatlist .block.unread .details .listHead .time {
+	color: #06d755;
+}
+
+/* Estilos para el párrafo no leído en la lista de chat */
+.chatlist .block.unread .details p {
+	color: #111;
+	font-weight: 600;
+}
+
+/* Estilos para la etiqueta 'b' en el bloque de chat */
+.message_p b {
+	background: #06d755;
+	color: #fff;
+	min-width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	display: flex;
+	font-size: 0.75em;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Estilos para la imagen y el texto en el bloque de chat */
+.imgText {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Estilos para el título en el bloque de chat */
+.imgText h4 {
+	font-weight: 600;
+	font-size: 1.02em;
+	margin-left: 15px;
+	line-height: 1.2em;
+}
+
+/* Estilos para el texto adicional en el título del bloque de chat */
+.imgText h4 span {
+	font-size: 0.8em;
+	color: #555;
+	font-weight: 400;
+}
+
+/* Estilos para la caja de mensajes del chat */
+.chatBox {
+	position: relative;
+	width: 100%;
+	height: calc(100% - 120px);
+	padding: 50px;
+	overflow-y: auto;
+}
+
+/* Estilos para un mensaje en el chat */
+.message {
+	position: relative;
+	display: flex;
+	width: 100%;
+	margin: 5px 0;
+}
+
+/* Estilos para el párrafo de un mensaje en el chat */
+.message p {
+	position: relative;
+	right: 0;
+	text-align: right;
+	max-width: 65%;
+	padding: 12px;
+	border-radius: 10px;
+	text-align: right;
+	font-size: 0.9em;
+	background: #dcf8c6;
+}
+
+/* Estilos para el indicador de un mensaje */
+.message p:first-child:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -12px;
+	width: 24px;
+	height: 24px;
+	background: linear-gradient(135deg,#dcf8c6 0%,#dcf8c6 50%,transparent 50%,transparent 100%);
+}
+
+/* Estilos para el texto adicional en un mensaje */
+.message p span {
+	display: block;
+	margin-top: 5px;
+	font-size: 0.85em;
+	opacity: 0.5;
+}
+
+/* Estilos para un mensaje propio */
+.message.my_message {
+	justify-content: flex-end;
+}
+
+/* Estilos para un mensaje de otro usuario */
+.message.frnd_message {
+	justify-content: flex-start;
+}
+
+/* Estilos para el párrafo de un mensaje de otro usuario */
+.message.frnd_message p {
+	text-align: left;
+	background: #fff;
+}
+
+/* Estilos para el indicador de un mensaje de otro usuario */
+.message.frnd_message p:first-child:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -12px;
+	width: 24px;
+	height: 24px;
+	background: linear-gradient(225deg,#fff 0%,#fff 50%,transparent 50%,transparent 100%);
+}
+
+/* Estilos para la caja de entrada de mensajes del chat */
+.chatBox_input {
+	position: relative;
+	padding: 15px;
+	width: 100%;
+	height: 60px;
+	background: #f0f0f0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* Estilos para los íconos en la caja de entrada de mensajes */
+.chatBox_input ion-icon {
+	cursor: pointer;
+	font-size: 1.8em;
+	color: #51585c;
+}
+
+/* Estilos para el primer ícono en la caja de entrada de mensajes */
+.chatBox_input ion-icon:first-child {
+	margin-right: 15px;
+}
+
+/* Estilos para el campo de entrada de mensajes */
+.chatBox_input input {
+	position: relative;
+	width: 90%;
+	margin: 0 20px;
+	padding: 10px 20px;
+	border: none;
+	outline: none;
+	border-radius: 30px;
+	font-size: 1em;
+}
+
+/* Estilos para la barra de desplazamiento */
+/* Track */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track background */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bbb; 
+}
+/* Estilos para un mensaje propio */
+.message.my_message {
+  justify-content: flex-end;
+}
+
+/* Estilos para un mensaje de otro usuario */
+.message.frnd_message {
+  justify-content: flex-start;
+}
+
+/* Estilos para el párrafo de un mensaje de otro usuario */
+.message.frnd_message p {
+  text-align: left;
+  background: #fff;
+}
